@@ -65,7 +65,7 @@ let frameworksToChecksum = [
     "AWSUserPoolsSignIn": "15885dcb5eda644c82080e98cc608f3b20cdaca9138aca0a19c59ecda791ef51"
 ]
 
-var products = frameworksToChecksum.keys.map {Product.library(name: $0, targets: [$0])}
+var products = frameworksToChecksum.keys.map {Product.library(name: $0, type: .dynamic, targets: [$0])}
 
 func createTarget(framework: String, checksum: String) -> Target {
     localPathEnabled ?
